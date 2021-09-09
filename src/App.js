@@ -3,6 +3,8 @@ import React, {useState} from "react";
 
 function App() {
 
+  document.title = 'Noti.io' 
+
   const [tasks, setTasks] = useState([{
     text: 'Test Task',
     id: 616 
