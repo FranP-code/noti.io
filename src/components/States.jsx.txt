@@ -1,0 +1,26 @@
+import React, {useState} from 'react'
+
+export function States() {
+
+    const [messageInvalidText, setMessageInvalidText] = useState('')
+
+    const [tasks, setTasks] = useState([{
+        text: 'Test Task',
+        id: 616 
+      }])
+
+    const [formEditInput, setFormEditInput] = useState('')
+
+    const [text, setText] = useState('')
+    
+    return (
+        <>
+        {
+        const [messageInvalidText, setMessageInvalidText] = useState('')
+            
+        }
+        </>
+    )
+}
+
+export default States
