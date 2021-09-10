@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Header from './components/Header'
 import TaskList from "./components/TaskList";
 import AddTask from "./components/AddTask";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
     <>
       <Header />
       <div className="app">
+
         <TaskList
           tasks={tasks}
           setTasks={setTasks}
@@ -56,9 +58,8 @@ function App() {
           
         />
 
-
       </div>
-      <footer>Made with 💓 by <a href="https://www.upwork.com/freelancers/~01d6fc06b8da216c2b">Francisco Pessano</a></footer>
+      <Footer />
     </>
   );
 }

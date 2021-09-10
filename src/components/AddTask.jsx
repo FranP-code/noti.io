@@ -2,8 +2,6 @@ import React, {useState} from 'react'
 
 const AddTask = (props) => {
 
-
-
     const validateInput = (e, id = 0 ) => {
         e.preventDefault()
     
@@ -38,22 +36,22 @@ const AddTask = (props) => {
           //props.setText('')
         }
 
-    const persistTasks = (modificatedTasks) => {
-        localStorage.setItem('tasks', JSON.stringify(modificatedTasks))
-    }
-
-    const persistCounter = () => {
-        localStorage.setItem('counter', JSON.stringify(props.counterInputs))
-    }
-
-    const restoreTasks = () => {
-        let tasksCache = localStorage.getItem('tasks')
-    
-        tasksCache = JSON.parse(tasksCache)
-    
-        props.setTasks(tasksCache)
-        
+      const persistTasks = (modificatedTasks) => {
+          localStorage.setItem('tasks', JSON.stringify(modificatedTasks))
       }
+
+      const persistCounter = () => {
+          localStorage.setItem('counter', JSON.stringify(props.counterInputs))
+      }
+
+      const restoreTasks = () => {
+          let tasksCache = localStorage.getItem('tasks')
+      
+          tasksCache = JSON.parse(tasksCache)
+      
+          props.setTasks(tasksCache)
+          
+        }
     
       const restoreCounter = () => {
         let counterInputCache = localStorage.getItem('counter')
