@@ -4,6 +4,7 @@ import Header from './components/Header'
 import TaskList from "./components/TaskList";
 import AddTask from "./components/AddTask";
 import Footer from "./components/Footer";
+import { checkCache } from "./components/cacheFunctions";
 
 function App() {
 
@@ -23,7 +24,10 @@ function App() {
 
   const [formEditInput, setFormEditInput] = useState('')
 
-
+  window.onload = () => {
+    checkCache()
+  }
+  
   return (
     <>
       <Header />
@@ -60,6 +64,8 @@ function App() {
 
       </div>
       <Footer />
+
+      
     </>
   );
 }

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {persistTasks, persistCounter} from './cacheFunctions'
 
 const AddTask = (props) => {
 
@@ -30,51 +31,11 @@ const AddTask = (props) => {
               text: props.text,
               id: props.counterInputs
             }
-          ])
+          ], props)
           
-          persistCounter()
+          persistCounter(props)
           //props.setText('')
         }
-
-      const persistTasks = (modificatedTasks) => {
-          localStorage.setItem('tasks', JSON.stringify(modificatedTasks))
-      }
-
-      const persistCounter = () => {
-          localStorage.setItem('counter', JSON.stringify(props.counterInputs))
-      }
-
-      const restoreTasks = () => {
-          let tasksCache = localStorage.getItem('tasks')
-      
-          tasksCache = JSON.parse(tasksCache)
-      
-          props.setTasks(tasksCache)
-          
-        }
-    
-      const restoreCounter = () => {
-        let counterInputCache = localStorage.getItem('counter')
-    
-        counterInputCache = JSON.parse(counterInputCache)
-    
-        props.setCounterInputs(counterInputCache + 1)
-      }
-    
-      const checkCache = () => {
-        if (localStorage.getItem('tasks')) {
-          restoreTasks()
-        }
-    
-        if (localStorage.getItem('counter')) {
-          restoreCounter()
-        }
-        return
-      }
-    
-      window.onload = () => {
-        checkCache()
-      }
 
     return (
         <>
